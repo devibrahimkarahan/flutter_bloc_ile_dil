@@ -27,7 +27,7 @@ class _PageSplashState extends State<PageSplash> {
 
   @override
   Widget build(BuildContext context) {
-    AppLocalizations.of(context);
+//    AppLocalizations.of(context);
     return Scaffold(
       body: SizedBox(),
     );

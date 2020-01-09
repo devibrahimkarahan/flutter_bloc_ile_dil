@@ -10,6 +10,7 @@ class PageHome extends StatefulWidget {
 class _PageHomeState extends State<PageHome> {
   @override
   Widget build(BuildContext context) {
+    AppLocalizations.of(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(AppLocalizations.getString("home")),

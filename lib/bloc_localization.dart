@@ -12,7 +12,7 @@ class BlocLocalization extends Bloc<Language, Locale> {
   @override
   Stream<Locale> mapEventToState(Language event) async* {
     Locale locale = event == Language.TR ? Locale("tr") : Locale("en");
-    AppLocalizations.updateLocale(locale);
+//    AppLocalizations.updateLocale(locale);
     LangUtils.saveLanguage(locale);
     yield locale;
   }

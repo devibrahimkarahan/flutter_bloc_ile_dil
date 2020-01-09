@@ -10,9 +10,6 @@ class AppLocalizations {
 
   AppLocalizations(this._locale);
 
-  static const LocalizationsDelegate<AppLocalizations> delegate =
-      _AppLocalizationsDelegate();
-
   static AppLocalizations of(BuildContext context) {
     if (_instance == null)
       _instance = Localizations.of<AppLocalizations>(context, AppLocalizations);
@@ -25,7 +22,7 @@ class AppLocalizations {
 
   static void updateLocale(Locale locale) {
     if (_instance != null) {
-      _instance?._locale = locale;
+      _instance._locale = locale;
       _instance._loadStrings();
     }
   }
@@ -37,6 +34,9 @@ class AppLocalizations {
       },
     );
   }
+
+  static const LocalizationsDelegate<AppLocalizations> delegate =
+      _AppLocalizationsDelegate();
 }
 
 class _AppLocalizationsDelegate

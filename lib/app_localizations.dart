@@ -27,12 +27,11 @@ class AppLocalizations {
     }
   }
 
-  void _loadStrings() {
-    rootBundle.loadString("langs/${_locale.languageCode}.json").then(
-      (jsonString) {
-        _strings = Map.from(jsonDecode(jsonString));
-      },
+  Future<void> _loadStrings() async {
+    final String jsonString = await rootBundle.loadString(
+      "langs/${_locale.languageCode}.json",
     );
+    _strings = Map.from(jsonDecode(jsonString));
   }
 
   static const LocalizationsDelegate<AppLocalizations> delegate =
@@ -51,7 +50,7 @@ class _AppLocalizationsDelegate
   @override
   Future<AppLocalizations> load(Locale locale) async {
     AppLocalizations appLocalization = AppLocalizations(locale);
-    appLocalization._loadStrings();
+    await appLocalization._loadStrings();
     return appLocalization;
   }
 
